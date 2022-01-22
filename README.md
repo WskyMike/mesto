@@ -1,4 +1,4 @@
-# [Проектная работа Mesto](https://wskymike.github.io/mesto/) | Яндекс.Практикмум
+# [Проектная работа Mesto](https://wskymike.github.io/mesto/) | Яндекс.Практикум
 
 Mesto - это проектная работа вэб-приложения, где вы можете размещать свои фото и получать лайки. Сверстана по  [макету на Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4) с адаптацией под мобильные устройства.
 <br>
