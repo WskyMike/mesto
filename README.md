@@ -4,13 +4,13 @@ Mesto - это проектная работа вэб-приложения, гд
 <br>
 <br>
 ## Используемые технологии
-  ☑️ HTML<br>
-  ☑️ CSS<br>
-  ☑️ JavaScript<br>
-  ☑️ BEM (Nested)<br>
-  ☑️ Flexbox<br>
-  ☑️ Grid Layout<br>
-  ☑️ Figma
+☑️ HTML<br>
+☑️ CSS<br>
+☑️ JavaScript<br>
+☑️ BEM (Nested)<br>
+☑️ Flexbox<br>
+☑️ Grid Layout<br>
+☑️ Figma
 <br>
 <br>
 ## Планы по доработке
