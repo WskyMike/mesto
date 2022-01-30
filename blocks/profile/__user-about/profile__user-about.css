@@ -1,4 +1,4 @@
-.profile__userabout {
+.profile__user-about {
   font-size: 18px;
   line-height: 22px;
   font-weight: normal;
@@ -9,9 +9,9 @@
 }
 
 @media screen and (max-width: 374px) {
-  .profile__userabout {
+  .profile__user-about {
     font-size: 14px;
-  line-height: 17px;
-  text-align: center;
+    line-height: 17px;
+    text-align: center;
   }
 }

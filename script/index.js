@@ -1,60 +1,50 @@
-
-// let PROFILE
-let buttonEditButon = document.querySelector('.profile__edit-button');
-let profileUserName = document.querySelector('.profile__username');
-let profileUserAbout = document.querySelector('.profile__userabout');
-// let POPUP
-let popup = document.querySelector('.popup');
-let popupContainer = document.querySelector('.popup__container');
-let popupCloseButton = document.querySelector('.popup__close');
-let popupSaveButton = document.querySelector('.popup__submit');
-let popupInputName = document.querySelector('.popup__username');
-let popupInputAbout = document.querySelector('.popup__userabout');
+// PROFILE
+const buttonEditButon = document.querySelector(".profile__edit-button");
+const profileUserName = document.querySelector(".profile__user-name");
+const profileUserAbout = document.querySelector(".profile__user-about");
+// POPUP
+const popup = document.querySelector(".popup");
+const popupContainer = document.querySelector(".popup__container");
+const popupForm = document.querySelector(".popup__form");
+const popupCloseButton = document.querySelector(".popup__close");
+const popupInputName = document.querySelector(".popup__input_user-name");
+const popupInputAbout = document.querySelector(".popup__input_user-about");
 
 //функция "открыть попап" и заполнить поля тем, что на странице
-function openPopup(event) {
-  event.preventDefault();
-  popup.classList.add('popup_opened');
+function openPopup() {
+  popup.classList.add("popup_opened");
   popupInputName.value = profileUserName.textContent;
   popupInputAbout.value = profileUserAbout.textContent;
-};
+}
+
+// клик на кнопку "profile__edit-button" открывает попап
+buttonEditButon.addEventListener("click", openPopup);
 
 // функция "закрыть попап"
 function closePopup() {
-  popup.classList.remove('popup_opened');
-};
+  popup.classList.remove("popup_opened");
+}
 
-// клик на кнопку "редактировать профиль"
-buttonEditButon.addEventListener('click', openPopup);
-
-// клик на крестик "закрыть попап"
-popupCloseButton.addEventListener('click', closePopup);
-
-//Клик на "Сохранить"
-popupSaveButton.addEventListener('click', formSubmitHandler);
-
-//клик на пустое поле закрывает попап
-popup.addEventListener('click', function (event) {
-  if (!event.defaultPrevented) {
-    closePopup();
-  }
-});
-popupContainer.addEventListener('click', function (e) {
-  e.preventDefault();
-});
+// клик на крестик "popup__close" закрывает попап
+popupCloseButton.addEventListener("click", closePopup);
 
 // Обработчик «отправки» формы
 function formSubmitHandler(evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   profileUserName.textContent = popupInputName.value;
   profileUserAbout.textContent = popupInputAbout.value;
-  if (popupInputName.value.length > 0) {
-    closePopup();
-  }
+  closePopup();
 }
 
-// Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
-popupContainer.addEventListener('submit', formSubmitHandler);
+// Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка» /
+popupForm.addEventListener("submit", formSubmitHandler);
 
-
-
+//клик на пустое поле закрывает попап
+// popup.addEventListener('click', function (event) {
+//   if (!event.defaultPrevented) {
+//     closePopup();
+//   }
+// });
+// popupContainer.addEventListener('click', function (e) {
+//   e.preventDefault();
+// });

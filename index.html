@@ -9,7 +9,7 @@
 <body class="page">
 <!-- HEADER -->
   <header class="header">
-    <div class="header__logo"></div>
+    <img class="header__logo" src="./images/header_logo.svg" alt="лого">
   </header>
   <main class="content">
 <!-- PROFILE -->
@@ -17,12 +17,12 @@
       <img class="profile__avatar" src="./images/kusto.jpg" alt="Аватар профиля">
       <div class="profile__info">
         <div class="profile__container">
-          <h1 class="profile__username">Жак-Ив Кусто</h1>
-          <button type="button" class="profile__edit-button"></button>
+          <h1 class="profile__user-name">Жак-Ив Кусто</h1>
+          <button type="button" class="profile__edit-button" aria-label="Редактировать профиль"></button>
         </div>
-        <h2 class="profile__userabout">Исследователь океана</h2>
+        <h2 class="profile__user-about">Исследователь океана</h2>
       </div>
-      <button type="button" class="profile__add-button"></button>
+      <button type="button" class="profile__add-button" aria-label="Добавить свой профиль"></button>
     </section>
 <!-- ELEMENTS -->
     <section class="elements">
@@ -31,42 +31,42 @@
           <img class="elements__picture" src="./images/comp.jpg" alt="компьютерный клуб">
           <div class="elements__text-container">
             <h3 class="elements__text">Детство</h3>
-            <button type="button" class="elements__like-icon elements__like-icon_active"></button>
+            <button type="button" class="elements__like-icon" aria-label="Оценить фото"></button>
           </div>
         </li>
         <li class="elements__card">
           <img class="elements__picture" src="./images/kirill-pershin-1404681-unsplash.jpg" alt="Эльбрус">
           <div class="elements__text-container">
             <h3 class="elements__text">Гора Эльбрус</h3>
-            <button type="button" class="elements__like-icon"></button>
+            <button type="button" class="elements__like-icon" aria-label="Оценить фото"></button>
           </div>
         </li>
         <li class="elements__card">
           <img class="elements__picture" src="./images/kirill-pershin-1556355-unsplash.jpg" alt="Гора Домбай">
           <div class="elements__text-container">
             <h3 class="elements__text">Домбай</h3>
-            <button type="button" class="elements__like-icon"></button>
+            <button type="button" class="elements__like-icon" aria-label="Оценить фото"></button>
           </div>
         </li>
         <li class="elements__card">
           <img class="elements__picture" src="./images/yury-kirillov-mototrip_cut.jpg" alt="мототрип">
           <div class="elements__text-container">
             <h3 class="elements__text">Мототрип</h3>
-            <button type="button" class="elements__like-icon"></button>
+            <button type="button" class="elements__like-icon" aria-label="Оценить фото"></button>
           </div>
         </li>
         <li class="elements__card">
           <img class="elements__picture" src="./images/uneke-ub-train.jpg" alt="поезд">
           <div class="elements__text-container">
             <h3 class="elements__text">На поезде</h3>
-            <button type="button" class="elements__like-icon"></button>
+            <button type="button" class="elements__like-icon" aria-label="Оценить фото"></button>
           </div>
         </li>
         <li class="elements__card">
           <img class="elements__picture" src="./images/artis-kancs-panelka.jpg" alt="панелька">
           <div class="elements__text-container">
             <h3 class="elements__text">Глубинка</h3>
-            <button type="button" class="elements__like-icon"></button>
+            <button type="button" class="elements__like-icon" aria-label="Оценить фото"></button>
           </div>
         </li>
       </ul>
@@ -78,13 +78,15 @@
   </footer>
 <!-- POPUP -->
   <div class="popup">
-    <form class="popup__container" autocomplete="off" action="#">
+    <div class="popup__container">
       <h2 class="popup__title">Редактировать профиль</h2>
-      <button class="popup__close"></button>
-      <input class="popup__username" type="text" required autofocus maxlength="30">
-      <input class="popup__userabout" type="text" maxlength="50">
-      <button class="popup__submit" type="submit">Сохранить</button>
-    </form>
+      <button class="popup__close" type="reset" aria-label="Закрыть окно без изменений"></button>
+      <form class="popup__form" name="user-form" autocomplete="off" method="get">
+        <input class="popup__input_user-name popup__input" type="text" required autofocus maxlength="30">
+        <input class="popup__input_user-about popup__input" type="text" maxlength="50">
+        <button class="popup__submit" type="submit" aria-label="Сохранить">Сохранить</button>
+      </form>
+    </div>
   </div>
   <script src="./script/index.js"></script>
 </body>
