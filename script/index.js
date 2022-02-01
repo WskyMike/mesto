@@ -7,8 +7,8 @@ const popup = document.querySelector(".popup");
 const popupContainer = document.querySelector(".popup__container");
 const popupForm = document.querySelector(".popup__form");
 const popupCloseButton = document.querySelector(".popup__close");
-const popupInputName = document.querySelector(".popup__input_user-name");
-const popupInputAbout = document.querySelector(".popup__input_user-about");
+const popupInputName = document.querySelector(".popup__input_data_user-name");
+const popupInputAbout = document.querySelector(".popup__input_data_user-about");
 
 //функция "открыть попап" и заполнить поля тем, что на странице
 function openPopup() {
