@@ -28,8 +28,8 @@ const popupCloseFullscreen = document.querySelector('.popup__close_type_fullscre
 // ELEMENTS
 const initialCards = [
   {
-    name: 'Детство',
-    link: '../images/comp.jpg'
+    name: 'Гейминг',
+    link: 'https://images.unsplash.com/photo-1544652478-6653e09f18a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
   },
   {
     name: 'На заре',
