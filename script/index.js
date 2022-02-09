@@ -26,39 +26,13 @@ const popupFullscreenTitle = document.querySelector(".popup__fullscreen-title");
 const popupCloseFullscreen = document.querySelector('.popup__close_type_fullscreen');
 
 // ELEMENTS
-const initialCards = [
-  {
-    name: 'Гейминг',
-    link: 'https://images.unsplash.com/photo-1544652478-6653e09f18a2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80'
-  },
-  {
-    name: 'На заре',
-    link: 'https://cdn.pixabay.com/photo/2021/10/28/20/20/hut-6750482_960_720.jpg'
-  },
-  {
-    name: 'Иваново',
-    link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
-  },
-  {
-    name: 'Няши',
-    link: 'https://cdn.pixabay.com/photo/2017/03/14/17/24/women-2143800_960_720.jpg'
-  },
-  {
-    name: 'кОзел',
-    link: 'https://cdn.pixabay.com/photo/2021/10/31/09/25/animal-6756751_960_720.jpg'
-  },
-  {
-    name: 'Мотокайф',
-    link: 'https://cdn.pixabay.com/photo/2021/12/13/09/46/moto-bikes-6867911_960_720.jpg'
-  }
-];
 const templateCard = document.querySelector ('#template__card').content;
 const elementsContainer = document.querySelector('.elements__container');
 
 // > > > > > > > > > > > > > > > >  КАРТОЧКИ < < < < < < < < < < < < < < < <
 
 // Готовим карточку \\
-function renderCards(name, link) {
+function renderCard(name, link) {
   const card = templateCard.cloneNode(true);                                //клонируем содержимое template__card
   const elementsPicture = card.querySelector('.elements__picture');         //находим поле с картинкой и присваиваем link
   const elementsText = card.querySelector('.elements__text');               //находим поле с заголовком и присваиваем name
@@ -67,7 +41,7 @@ function renderCards(name, link) {
 
   elementsPicture.src = link;
   elementsText.textContent = name;
-  elementsText.alt = name;                                                  // alt будет такой же, как name
+  elementsPicture.alt = name;                                                  // alt будет такой же, как name
 
   //добавим на лайк слушатель клика и создадим событие >> Событие: при клике на цель (target) класс будет изменен на _active. Классы постоянно чередуются с помощью toggle
   like.addEventListener('click', (evt) => {evt.target.classList.toggle("elements__like-icon_active")});
@@ -77,9 +51,9 @@ function renderCards(name, link) {
 
   //клик по картинке подставляет название и ссылку на фото в попап из карточки и открывает его
   elementsPicture.addEventListener('click', () => {
-    popupFullscreenImg.src = elementsPicture.src;
-    popupFullscreenImg.alt = elementsPicture.alt;
-    popupFullscreenTitle.textContent = elementsText.textContent;
+    popupFullscreenImg.src = link;
+    popupFullscreenImg.alt = name;
+    popupFullscreenTitle.textContent = name;
 
     openPopup(popupFullscreen);
   });
@@ -91,8 +65,9 @@ function renderCards(name, link) {
 function addCard(card) {
   elementsContainer.prepend(card); // добавить готовую карточку в начало контейнера.
 };
+
 initialCards.forEach((item) => { // вызываем функцию для каждого элемента массива [initialCards]
-  let card  = renderCards (item.name, item.link); // здесь наполняет содержимым поля link и name из массива [initialCards] (??? запутался, потому что тупой)
+  let card  = renderCard (item.name, item.link); // здесь наполняет содержимым поля link и name из массива [initialCards]
   addCard(card); // вызываем функцию добавления карточки на страницу с (cardItem), где заполнили поля name и link
 });
 
@@ -135,7 +110,7 @@ popupCloseFullscreen.addEventListener("click", () => {
 
 
 // Обработчик «отправки» формы ПРОФИЛЬ
-function formSubmitHandlerProfile(evt) {
+function handleSubmitProfileForm(evt) {
   evt.preventDefault(); // Эта строчка отменяет стандартную отправку формы.
   profileUserName.textContent = popupInputName.value;
   profileUserAbout.textContent = popupInputAbout.value;
@@ -143,16 +118,16 @@ function formSubmitHandlerProfile(evt) {
 };
 
 // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка» /
-popupFormProfile.addEventListener("submit", formSubmitHandlerProfile);
+popupFormProfile.addEventListener("submit", handleSubmitProfileForm);
 
 // Обработчик «отправки» формы ФОТО
-function formSubmitHandlerAddCard(evt) {
+function handleSubmitAddCardForm(evt) {
   evt.preventDefault();
-  let card = renderCards(popupInputTitlePhoto.value, popupInputLinkToPic.value); // Создаем карточку
+  let card = renderCard(popupInputTitlePhoto.value, popupInputLinkToPic.value); // Создаем карточку
   addCard(card); // Добавляем на страницу
   closePopup(popupAddPhoto);
   popupFormPhoto.reset ();
 };
 
 // Прикрепляем обработчик к форме: он будет следить за событием “submit” - «отправка»
-popupFormPhoto.addEventListener("submit", formSubmitHandlerAddCard);
+popupFormPhoto.addEventListener("submit", handleSubmitAddCardForm);
