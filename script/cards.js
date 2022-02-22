@@ -8,7 +8,7 @@ const initialCards = [
     link: 'https://cdn.pixabay.com/photo/2021/10/28/20/20/hut-6750482_960_720.jpg'
   },
   {
-    name: 'Иваново',
+    name: 'Панельки',
     link: 'https://pictures.s3.yandex.net/frontend-developer/cards-compressed/ivanovo.jpg'
   },
   {
@@ -16,8 +16,8 @@ const initialCards = [
     link: 'https://cdn.pixabay.com/photo/2017/03/14/17/24/women-2143800_960_720.jpg'
   },
   {
-    name: 'кОзел',
-    link: 'https://cdn.pixabay.com/photo/2021/10/31/09/25/animal-6756751_960_720.jpg'
+    name: 'Тай',
+    link: 'https://images.unsplash.com/photo-1581413224308-c859525067ec?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80'
   },
   {
     name: 'Мотокайф',
