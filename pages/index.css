@@ -1,3 +1,4 @@
+/* PAGE CONFIG */
 @import url(../vendor/normalize.css);
 @import url(../vendor/fonts/fonts.css);
 @import url(../blocks/page/page.css);
@@ -16,7 +17,7 @@
 @import url(../blocks/profile/__add-button/profile__add-button.css);
 @import url(../blocks/profile/__info/profile__info.css);
 
-/* ELEMENTS */
+/* ELEMENTS / CARDS */
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/elements/__container/elements__container.css);
 @import url(../blocks/elements/__card/elements__card.css);
@@ -35,6 +36,7 @@
 @import url(../blocks/popup/popup.css);
 @import url(../blocks/popup/__container/popup__container.css);
 @import url(../blocks/popup/__submit/popup__submit.css);
+@import url(../blocks/popup/__submit/_inactive/popup__submit_inactive.css);
 @import url(../blocks/popup/__title/popup__title.css);
 @import url(../blocks/popup/__input/popup__input.css);
 @import url(../blocks/popup/_opened/popup_opened.css);
@@ -43,3 +45,11 @@
 @import url(../blocks/popup/__fullscreen-container/popup__fullscreen-container.css);
 @import url(../blocks/popup/__fullscreen-title/popup__fullscreen-title.css);
 @import url(../blocks/popup/__fullscreen-img/popup__fullscreen-img.css);
+@import url(../blocks/popup/__input-container/popup__input-container.css);
+
+
+
+/* POPUP_errors */
+@import url(../blocks/popup/__input/_type/popup__input_type_invalid.css);
+@import url(../blocks/popup/__input-error/popup__input-error.css);
+@import url(../blocks/popup/__input-error/popup__input-error_visible.css);

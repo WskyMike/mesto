@@ -5,26 +5,21 @@ const profileUserName = document.querySelector(".profile__user-name");
 const profileUserAbout = document.querySelector(".profile__user-about");
 // POPUPs
 const popup = document.querySelector(".popup");
-const popupContainer = document.querySelector(".popup__container");
+const popups = document.querySelectorAll(".popup");
 // PROFILE POPUP
 const popupEditProfile = document.querySelector(".popup_style_edit-profile");
-const popupCloseProfile = document.querySelector(".popup__close_type_profile");
 const popupInputName = document.querySelector(".popup__input_data_user-name");
 const popupInputAbout = document.querySelector(".popup__input_data_user-about");
 const popupFormProfile = document.querySelector(".popup__form_type_profile");
 // ADD PHOTO POPUP
 const popupAddPhoto = document.querySelector(".popup_style_add-photo");
-const popupClosePhoto = document.querySelector(".popup__close_type_photo");
 const popupInputTitlePhoto = document.querySelector(".popup__input_data_title-photo");
 const popupInputLinkToPic = document.querySelector(".popup__input_data_link-to-pic");
 const popupFormPhoto = document.querySelector(".popup__form_type_photo");
-
 //FULLSCREEN POPUP
 const popupFullscreen = document.querySelector(".popup_style_fullscreen-img");
 const popupFullscreenImg = document.querySelector(".popup__fullscreen-img");
 const popupFullscreenTitle = document.querySelector(".popup__fullscreen-title");
-const popupCloseFullscreen = document.querySelector('.popup__close_type_fullscreen');
-
 // ELEMENTS
 const templateCard = document.querySelector ('#template__card').content;
 const elementsContainer = document.querySelector('.elements__container');
@@ -73,10 +68,39 @@ initialCards.forEach((item) => { // вызываем функцию для ка�
 
 // > > > > > > > > > > > > > > > >          < < < < < < < < < < < < < < < <
 
-//функция "открыть попап"
+//функция открытия попапа
 function openPopup(popup) {
   popup.classList.add('popup_opened');
+  document.addEventListener('keydown', closePopupEsc);
 };
+
+// функция закрытия попапа
+function closePopup(popup) {
+  popup.classList.remove("popup_opened");
+  document.removeEventListener('keydown', closePopupEsc);
+};
+
+// Функция закрытие попап по ESC
+function closePopupEsc (evt) {
+  if (evt.key === 'Escape') {
+    closePopup(document.querySelector('.popup_opened'));
+  };
+};
+
+// Клик: закрыть попапЫ по кнопке и оверлею
+function click () {
+  popups.forEach( (popup) => {
+    popup.addEventListener('click', (event) => {
+        if (event.target.classList.contains('popup_opened')) {
+          closePopup(popup);
+        };
+        if (event.target.classList.contains('popup__close')) {
+          closePopup(popup);
+        };
+    });
+  });
+};
+click();
 
 // клик на кнопку profile__edit-button открывает попап и заполняет форму текстом со страницы
 profileEditButton.addEventListener("click", () => {
@@ -89,25 +113,6 @@ profileEditButton.addEventListener("click", () => {
 photoAddButton.addEventListener("click", () => {
   openPopup (popupAddPhoto);
 });
-
-// функция "закрыть попап"
-function closePopup(popup) {
-  popup.classList.remove("popup_opened");
-};
-
-// клик на кнопку "popup__close_type_photo" закрывает попап
-popupClosePhoto.addEventListener("click", () => {
-  closePopup(popupAddPhoto);
-});
-// клик на кнопку "popup__close_type_profile" закрывает попап
-popupCloseProfile.addEventListener("click", () => {
-  closePopup(popupEditProfile);
-});
-
-popupCloseFullscreen.addEventListener("click", () => {
-  closePopup(popupFullscreen);
-});
-
 
 // Обработчик «отправки» формы ПРОФИЛЬ
 function handleSubmitProfileForm(evt) {
