@@ -87,22 +87,20 @@ function closePopupEsc (evt) {
   };
 };
 
-// Клик: закрыть попапЫ по кнопке и оверлею
-function click () {
-  popups.forEach( (popup) => {
-    popup.addEventListener('click', (event) => {
-        if (event.target.classList.contains('popup_opened')) {
-          closePopup(popup);
-        };
-        if (event.target.classList.contains('popup__close')) {
-          closePopup(popup);
-        };
-    });
+// Закрыть попап по кнопке и оверлею
+popups.forEach((popup) => {
+  popup.addEventListener('click', (event) => {
+      if (event.target.classList.contains('popup_opened')) {
+        closePopup(popup);
+      };
+      if (event.target.classList.contains('popup__close')) {
+        closePopup(popup);
+      };
   });
-};
-click();
+});
 
-// клик на кнопку profile__edit-button открывает попап и заполняет форму текстом со страницы
+
+// клик на кнопку profile__edit-button открывает попап и заполняет форму текстом со страницы + сброс валидации при каждом открытии
 profileEditButton.addEventListener("click", () => {
   popupInputName.value = profileUserName.textContent;
   popupInputAbout.value = profileUserAbout.textContent;
@@ -110,7 +108,7 @@ profileEditButton.addEventListener("click", () => {
   resetValidation (popupEditProfile, validationConfig)
 });
 
-// клик на кнопку profile__add-button открывает попап
+// клик на кнопку profile__add-button открывает попап + сброс валидации при каждом открытииы
 photoAddButton.addEventListener("click", () => {
   openPopup (popupAddPhoto);
   resetValidation (popupAddPhoto, validationConfig)

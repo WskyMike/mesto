@@ -92,7 +92,7 @@ const enableValidation = validationConfig => {
 
 enableValidation(validationConfig);
 
-// Сброс валидации при повторном открытии попапа
+// Сброс валидации при каждом открытии попапа
 function resetValidation (formElement, validationConfig) {
   const inputList = Array.from(formElement.querySelectorAll(validationConfig.inputSelector));
   const buttonElement = formElement.querySelector(validationConfig.submitButtonSelector);
