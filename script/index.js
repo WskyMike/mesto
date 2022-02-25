@@ -107,11 +107,13 @@ profileEditButton.addEventListener("click", () => {
   popupInputName.value = profileUserName.textContent;
   popupInputAbout.value = profileUserAbout.textContent;
   openPopup (popupEditProfile);
+  resetValidation (popupEditProfile, validationConfig)
 });
 
 // клик на кнопку profile__add-button открывает попап
 photoAddButton.addEventListener("click", () => {
   openPopup (popupAddPhoto);
+  resetValidation (popupAddPhoto, validationConfig)
 });
 
 // Обработчик «отправки» формы ПРОФИЛЬ
