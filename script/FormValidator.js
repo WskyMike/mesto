@@ -82,6 +82,7 @@ export class FormValidator {
   }
   // Сброс предыдущей валидации при каждом открытии форм
   resetValidation() {
+    this._form.reset();
     this._toggleButtonState();
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
