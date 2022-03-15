@@ -75,8 +75,6 @@ export class FormValidator {
   // Обработчик форм
   enableValidation() {
     this._form.addEventListener("submit", (evt) => {
-      // Отменим стандартное поведение для сабмита
-      evt.preventDefault();
     });
     this._setEventListeners();
   }
