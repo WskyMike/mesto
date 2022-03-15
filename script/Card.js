@@ -5,6 +5,9 @@ class Card {
     this._name = name;
     this._image = image;
     this._cardSelector = cardSelector;
+    this._popupFullscreen = document.querySelector(".popup_style_fullscreen-img");
+    this._popupFullscreenImg = document.querySelector(".popup__fullscreen-img");
+    this._popupFullscreenTitle = document.querySelector(".popup__fullscreen-title");
   }
   // Получим содержимое template и клонируем его
   _getTemplate() {
@@ -20,14 +23,10 @@ class Card {
   }
   // Метод удаления карточки
   _handleDelete() {
-    this._elementTrash.closest(".elements__card").remove();
+    this._elementTrash.closest(".elements__card").remove(); // Немного не понял как без closest()
   }
   // Метод открытия фото Фуллскрин
   _handleOpenPopupFullscreen() {
-    this._popupFullscreen = document.querySelector(".popup_style_fullscreen-img");
-    this._popupFullscreenImg = document.querySelector(".popup__fullscreen-img");
-    this._popupFullscreenTitle = document.querySelector(".popup__fullscreen-title");
-
     this._popupFullscreenImg.src = this._image;
     this._popupFullscreenImg.alt = this._name;
     this._popupFullscreenTitle.textContent = this._name;

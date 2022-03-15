@@ -96,7 +96,7 @@ data.popupFormProfile.addEventListener("submit", handleSubmitProfileForm);
 // Обработчик «отправки» формы ФОТО
 function handleSubmitAddCardForm(evt) {
   evt.preventDefault();
-  let card = createCard(
+  const card = createCard(
     data.popupInputTitlePhoto.value,
     data.popupInputLinkToPic.value
   );
