@@ -1,9 +1,3 @@
-// Не думал, что проверка будет настолько быстрой и хотел просто подкорректировать код. Загрузил просто новую версию, а нарвался на первую интерацию =)) Теперь-то код с исправлениями.
-
-
-
-
-
 export class FormValidator {
   constructor(settings, form) {
     // Popup form (поля ввода и кнопка)
@@ -86,7 +80,6 @@ export class FormValidator {
   }
   // Сброс предыдущей валидации при каждом открытии форм
   resetValidation() {
-    this._form.reset();
     this._toggleButtonState();
     this._inputList.forEach((inputElement) => {
       this._hideInputError(inputElement);
