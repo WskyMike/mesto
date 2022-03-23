@@ -2,6 +2,7 @@
 import { Card } from "./Card.js";
 import * as data from "./parameters.js";
 import { FormValidator } from "./FormValidator.js";
+import './pages/index.css'; // импорт главного файла стилей
 
 // Валидация форм
 const editProfileValidator = new FormValidator(

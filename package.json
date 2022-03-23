@@ -1,0 +1,38 @@
+{
+  "name": "mesto_json",
+  "version": "1.0.0",
+  "description": "Mesto - это проектная работа вэб-приложения, где вы можете размещать свои фото и получать лайки. Сверстана по  [макету на Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4) с адаптацией под мобильные устройства.\r <br>\r <br>\r ## Используемые технологии\r ☑️ HTML<br>\r ☑️ CSS<br>\r ☑️ JavaScript<br>\r ☑️ BEM (Nested)<br>\r ☑️ Flexbox<br>\r ☑️ Grid Layout<br>\r ☑️ Figma\r <br>\r <br>\r ## Планы по доработке\r 🔲 Возможность ставить \"лайки\" и вести их счет.<br>\r 🔲 Возможность сменить \"аватар\".<br>\r 🔲 Возможность добавлять фото.",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "dev": "webpack serve"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WskyMike/mesto.git"
+  },
+  "author": "Mike Wsky",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WskyMike/mesto/issues"
+  },
+  "homepage": "https://github.com/WskyMike/mesto#readme",
+  "devDependencies": {
+    "@babel/core": "^7.17.8",
+    "@babel/preset-env": "^7.16.11",
+    "autoprefixer": "^10.4.4",
+    "babel-loader": "^8.2.3",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.7.1",
+    "cssnano": "^5.1.4",
+    "html-webpack-plugin": "^5.5.0",
+    "mini-css-extract-plugin": "^2.6.0",
+    "postcss-loader": "^6.2.1",
+    "webpack": "^5.70.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4"
+  },
+  "dependencies": {
+    "core-js": "^3.21.1"
+  }
+}

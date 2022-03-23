@@ -3,18 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <link rel="stylesheet" href="./pages/index.css">
+  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
   <title>Mesto</title>
 </head>
 <body class="page">
 <!-- HEADER -->
   <header class="header">
-    <img class="header__logo" src="./images/header_logo.svg" alt="лого">
+    <img class="header__logo" src="<%=require('./images/header_logo.svg')%>" alt="лого">
   </header>
   <main class="content">
 <!-- PROFILE -->
     <section class="profile">
-      <img class="profile__avatar" src="./images/kusto.jpg" alt="Аватар профиля">
+      <img class="profile__avatar" src="<%=require('./images/kusto.jpg')%>" alt="Аватар профиля">
       <div class="profile__info">
         <div class="profile__container">
           <h1 class="profile__user-name">Жак-Ив Кусто</h1>
@@ -45,7 +45,7 @@
           <span class="username-input-error popup__input-error"></span>
         </div>
         <div class="popup__input-container">
-          <input id="userabout-input" class=" popup__input popup__input_data_user-about" name="profile-about" type="text" required mminlength="2" maxlength="200" placeholder="О себе">
+          <input id="userabout-input" class=" popup__input popup__input_data_user-about" name="profile-about" type="text" required minlength="2" maxlength="200" placeholder="О себе">
           <span class="userabout-input-error popup__input-error"></span>
         </div>
         <button class="popup__submit" type="submit" aria-label="Сохранить">Сохранить</button>
@@ -89,6 +89,6 @@
       </div>
     </li>
   </template>
-  <script type="module" src="./script/index.js"></script>
+  <script type="module" src="./src/index.js"></script>
 </body>
 </html>
