@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
+  <title>Mesto</title>
+</head>
+<body class="page">
+<!-- HEADER -->
+  <header class="header">
+    <img class="header__logo" src="<%=require('./images/header_logo.svg')%>" alt="лого">
+  </header>
+  <main class="content">
+<!-- PROFILE -->
+    <section class="profile">
+      <img class="profile__avatar" src="<%=require('./images/kusto.jpg')%>" alt="Аватар профиля">
+      <div class="profile__info">
+        <div class="profile__container">
+          <h1 class="profile__user-name">Жак-Ив Кусто</h1>
+          <button type="button" class="profile__edit-button" aria-label="Редактировать профиль"></button>
+        </div>
+        <h2 class="profile__user-about">Исследователь неисследованного</h2>
+      </div>
+      <button type="button" class="profile__add-button" aria-label="Добавить фото"></button>
+    </section>
+<!-- ELEMENTS -->
+    <section class="elements">
+      <ul class="elements__container">
+      </ul>
+    </section>
+  </main>
+<!-- FOOTER -->
+  <footer class="footer">
+    <p class="footer__author">© 2022 Михаил Соснин</p>
+  </footer>
+<!-- POPUP PROFILE-->
+  <div class="popup popup_style_edit-profile">
+    <div class="popup__container">
+      <h2 class="popup__title">Редактировать профиль</h2>
+      <button class="popup__close popup__close_type_profile" type="button" aria-label="Закрыть окно"></button>
+      <form class="popup__form popup__form_type_profile" id="profile-form" name="profile-form" autocomplete="off" method="get" novalidate>
+        <div class="popup__input-container">
+          <input id="username-input" class="popup__input popup__input_data_user-name" name="profile-name" type="text" required autofocus minlength="2" maxlength="40" placeholder="Имя">
+          <span class="username-input-error popup__input-error"></span>
+        </div>
+        <div class="popup__input-container">
+          <input id="userabout-input" class=" popup__input popup__input_data_user-about" name="profile-about" type="text" required minlength="2" maxlength="200" placeholder="О себе">
+          <span class="userabout-input-error popup__input-error"></span>
+        </div>
+        <button class="popup__submit" type="submit" aria-label="Сохранить">Сохранить</button>
+      </form>
+    </div>
+  </div>
+<!-- POPUP ADD CARD -->
+<div class="popup popup_style_add-photo">
+  <div class="popup__container">
+    <h2 class="popup__title">Новое место</h2>
+    <button class="popup__close popup__close_type_photo" type="button" aria-label="Закрыть окно"></button>
+    <form class="popup__form popup__form_type_photo" id="addcard-form" name="addcard-form" autocomplete="off" method="get" novalidate>
+      <div class="popup__input-container">
+        <input id="title-photo-input" class="popup__input_data_title-photo popup__input" name="addcard-title" type="text" required minlength="2" maxlength="30" placeholder="Название">
+        <span class="title-photo-input-error popup__input-error"></span>
+      </div>
+      <div class="popup__input-container">
+        <input id="link-input" class="popup__input_data_link-to-pic popup__input" name="addcard-link" type="url" required placeholder="Ссылка на картинку">
+        <span class="link-input-error popup__input-error"></span>
+      </div>
+      <button class="popup__submit" type="submit" aria-label="Создать">Создать</button>
+    </form>
+  </div>
+</div>
+<!-- POPUP FULSCREEN -->
+<div class="popup popup_style_fullscreen-img">
+  <div class="popup__fullscreen-container">
+    <button class="popup__close popup__close_type_fullscreen" type="button" aria-label="Закрыть окно"></button>
+    <img class="popup__fullscreen-img" src="#" alt="#">
+    <h2 class="popup__fullscreen-title">Title</h2>
+  </div>
+</div>
+<!-- TEMPLATE CARD -->
+  <template id="template__card">
+    <li class="elements__card">
+      <button type="button" class="elements__trash" aria-label="Удалить карточку"></button>
+      <div class="elements__picture-container"><img class="elements__picture" src="#" alt="#"></div>
+      <div class="elements__text-container">
+        <h3 class="elements__text">Title</h3>
+        <button type="button" class="elements__like-icon" aria-label="Оценить фото"></button>
+      </div>
+    </li>
+  </template>
+  <script type="module" src="./src/index.js"></script>
+</body>
+</html>
