@@ -47,6 +47,7 @@ export const profileUserName = document.querySelector(".profile__user-name");
 export const profileUserAbout = document.querySelector(".profile__user-about");
 // POPUPs
 export const popups = document.querySelectorAll(".popup");
+export const popupStyleFullscreen = document.querySelector(".popup_style_fullscreen-img");
 // PROFILE POPUP
 export const popupEditProfile = document.querySelector(".popup_style_edit-profile");
 export const popupInputName = document.querySelector(".popup__input_data_user-name");

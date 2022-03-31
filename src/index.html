@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <link rel="icon" href="<%=require('./images/fav.png')%>" type="image/x-icon">
   <!-- <link rel="stylesheet" href="./pages/index.css"> -->
   <title>Mesto</title>
 </head>
@@ -41,11 +42,11 @@
       <button class="popup__close popup__close_type_profile" type="button" aria-label="Закрыть окно"></button>
       <form class="popup__form popup__form_type_profile" id="profile-form" name="profile-form" autocomplete="off" method="get" novalidate>
         <div class="popup__input-container">
-          <input id="username-input" class="popup__input popup__input_data_user-name" name="profile-name" type="text" required autofocus minlength="2" maxlength="40" placeholder="Имя">
+          <input id="username-input" class="popup__input popup__input_data_user-name" name="name" type="text" required autofocus minlength="2" maxlength="40" placeholder="Имя">
           <span class="username-input-error popup__input-error"></span>
         </div>
         <div class="popup__input-container">
-          <input id="userabout-input" class=" popup__input popup__input_data_user-about" name="profile-about" type="text" required minlength="2" maxlength="200" placeholder="О себе">
+          <input id="userabout-input" class=" popup__input popup__input_data_user-about" name="about" type="text" required minlength="2" maxlength="200" placeholder="О себе">
           <span class="userabout-input-error popup__input-error"></span>
         </div>
         <button class="popup__submit" type="submit" aria-label="Сохранить">Сохранить</button>
@@ -89,6 +90,6 @@
       </div>
     </li>
   </template>
-  <script type="module" src="./src/index.js"></script>
+  <!-- <script type="module" src="./pages/index.js"></script> -->
 </body>
 </html>

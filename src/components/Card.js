@@ -1,13 +1,9 @@
-import openPopup from "./index.js";
-
 class Card {
-  constructor(name, image, cardSelector) {
+  constructor(name, link, cardSelector, handleImgClick) {
     this._name = name;
-    this._image = image;
+    this._image = link;
     this._cardSelector = cardSelector;
-    this._popupFullscreen = document.querySelector(".popup_style_fullscreen-img");
-    this._popupFullscreenImg = document.querySelector(".popup__fullscreen-img");
-    this._popupFullscreenTitle = document.querySelector(".popup__fullscreen-title");
+    this._handleImgClick = handleImgClick;
   }
   // Получим содержимое template и клонируем его
   _getTemplate() {
@@ -23,29 +19,15 @@ class Card {
   }
   // Метод удаления карточки
   _handleDelete() {
-    this._elementTrash.closest(".elements__card").remove(); // Немного не понял как без closest()
-  }
-  // Метод открытия фото Фуллскрин
-  _handleOpenPopupFullscreen() {
-    this._popupFullscreenImg.src = this._image;
-    this._popupFullscreenImg.alt = this._name;
-    this._popupFullscreenTitle.textContent = this._name;
-
-    openPopup(this._popupFullscreen);
+    this._elementTrash.closest(".elements__card").remove();
   }
   // Слушаем клики
   _setEventListeners() {
-    this._elementLke.addEventListener("click", () => {
-      this._handleGetLike();
-    });
+    this._elementLke.addEventListener("click", () => this._handleGetLike());
 
-    this._elementTrash.addEventListener("click", () => {
-      this._handleDelete();
-    });
+    this._elementTrash.addEventListener("click", () => this._handleDelete());
 
-    this._elementImg.addEventListener("click", () => {
-      this._handleOpenPopupFullscreen(this._name, this._image);
-    });
+    this._elementImg.addEventListener("click", () => this._handleImgClick());
   }
   // Генерим карточку
   generateCard() {
