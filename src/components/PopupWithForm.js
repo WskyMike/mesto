@@ -7,18 +7,19 @@ export default class PopupWithForm extends Popup {
     super(popupSelector);
     // Селектор попапа с формой.
     this._form = this._popup.querySelector(".popup__form");
-    // Колбэк сабмита формы(?)
+    // Колбэк сабмита формы.
     this._handleSubmitForm = handleSubmitForm;
+    // Находим поля инпутов и делаем массив
+    this._inputs = [...this._form.querySelectorAll(".popup__input")];
   }
   // Метод собирает данные всех полей ввода формы.
   _getInputValues() {
-    const inputs = [...this._form.querySelectorAll(".popup__input")];
-    const inputValues = {};
-    inputs.forEach((input) => {
-      inputValues[input.name] = input.value;
+    this._inputValues = {};
+    this._inputs.forEach((input) => {
+      this._inputValues[input.name] = input.value;
     });
 
-    return inputValues;
+    return this._inputValues;
   }
   close() {
     super.close();
