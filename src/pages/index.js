@@ -54,12 +54,9 @@ const handleSubmitProfileForm = (input) => {
 }
 
 // Обработчик SUBMIT формы ФОТО
-const handleSubmitAddCardForm = () => {
-  // Создаем новую карточку
-  const card = createCard(
-    data.popupInputTitlePhoto.value,
-    data.popupInputLinkToPic.value,
-  );
+const handleSubmitAddCardForm = (input) => {
+  // Создаем новую карточку (собираем инпуты в _getInputValues)
+  const card = createCard(input);
   addCard.addItem(card);
   addCardPopup.close();
 }
