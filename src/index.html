@@ -4,24 +4,26 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <link rel="icon" href="<%=require('./images/fav.png')%>" type="image/x-icon">
-  <!-- <link rel="stylesheet" href="./pages/index.css"> -->
   <title>Mesto</title>
 </head>
 <body class="page">
 <!-- HEADER -->
   <header class="header">
-    <img class="header__logo" src="<%=require('./images/header_logo.svg')%>" alt="лого">
+    <img class="header__logo" src="<%=require('./images/header_logo.svg')%>" alt="Лого">
   </header>
   <main class="content">
 <!-- PROFILE -->
     <section class="profile">
-      <img class="profile__avatar" src="<%=require('./images/kusto.jpg')%>" alt="Аватар профиля">
+      <div class="profile__avatar-wrapper">
+        <img class="profile__avatar-src" src="https://static10.tgstat.ru/channels/_0/2a/2a2e53b0e0820da8e791a8534038fe26.jpg" alt="Аватар профиля">
+        <button type="button" class="profile__avatar-button" aria-label="Изменить аватар"></button>
+      </div>
       <div class="profile__info">
         <div class="profile__container">
-          <h1 class="profile__user-name">Жак-Ив Кусто</h1>
+          <h1 class="profile__user-name"></h1>
           <button type="button" class="profile__edit-button" aria-label="Редактировать профиль"></button>
         </div>
-        <h2 class="profile__user-about">Исследователь неисследованного</h2>
+        <h2 class="profile__user-about"></h2>
       </div>
       <button type="button" class="profile__add-button" aria-label="Добавить фото"></button>
     </section>
@@ -58,13 +60,13 @@
   <div class="popup__container">
     <h2 class="popup__title">Новое место</h2>
     <button class="popup__close popup__close_type_photo" type="button" aria-label="Закрыть окно"></button>
-    <form class="popup__form popup__form_type_photo" id="addcard-form" name="addcard-form" autocomplete="off" method="get" novalidate>
+    <form class="popup__form popup__form_type_photo" id="addcard-form" name="addcard-form" autocomplete="on" method="get" novalidate>
       <div class="popup__input-container">
-        <input id="title-photo-input" class="popup__input_data_title-photo popup__input" name="addcard-title" type="text" required minlength="2" maxlength="30" placeholder="Название">
+        <input id="title-photo-input" class="popup__input_data_title-photo popup__input" name="name" type="text" required autofocus minlength="2" maxlength="30" placeholder="Название">
         <span class="title-photo-input-error popup__input-error"></span>
       </div>
       <div class="popup__input-container">
-        <input id="link-input" class="popup__input_data_link-to-pic popup__input" name="addcard-link" type="url" required placeholder="Ссылка на картинку">
+        <input id="link-input" class="popup__input_data_link-to-pic popup__input" name="link" type="url" required placeholder="Ссылка на картинку">
         <span class="link-input-error popup__input-error"></span>
       </div>
       <button class="popup__submit" type="submit" aria-label="Создать">Создать</button>
@@ -79,6 +81,30 @@
     <h2 class="popup__fullscreen-title">Title</h2>
   </div>
 </div>
+<!-- POPUP ARE YOU SURE -->
+<div class="popup popup_style_delete">
+  <div class="popup__container">
+    <h2 class="popup__title popup__title_style_delete">Вы уверены?</h2>
+    <button class="popup__close popup__close_type_photo" type="button" aria-label="Закрыть окно"></button>
+    <form class="popup__form" name="delete-card" method="get">
+      <button class="popup__submit popup__submit_style_delete" type="submit">Да</button>
+    </form>
+  </div>
+</div>
+<!-- POPUP AVATAR -->
+<div class="popup popup_style_avatar">
+  <div class="popup__container">
+    <h2 class="popup__title">Обновить aватар</h2>
+    <button class="popup__close popup__close_type_photo" type="button" aria-label="Закрыть окно"></button>
+    <form class="popup__form popup__form_type_photo" name="avatar-form" autocomplete="on" method="get" novalidate>
+      <div class="popup__input-container">
+        <input id="avatar-input" class="popup__input_data_avatar popup__input" name="avatar" type="url" required placeholder="Ссылка на картинку">
+        <span class="avatar-input-error popup__input-error"></span>
+      </div>
+      <button class="popup__submit" type="submit" aria-label="Сохранить">Сохранить</button>
+    </form>
+  </div>
+</div>
 <!-- TEMPLATE CARD -->
   <template id="template__card">
     <li class="elements__card">
@@ -86,7 +112,10 @@
       <div class="elements__picture-container"><img class="elements__picture" src="#" alt="#"></div>
       <div class="elements__text-container">
         <h3 class="elements__text">Title</h3>
-        <button type="button" class="elements__like-icon" aria-label="Оценить фото"></button>
+        <div class="elements__like-container">
+          <button type="button" class="elements__like-icon" aria-label="Оценить фото"></button>
+          <span class="elements__like-count"></span>
+        </div>
       </div>
     </li>
   </template>

@@ -6,7 +6,6 @@
   background-image: url(../../../images/like.svg);
   background-color: transparent;
   align-self: center;
-  margin: 5px 5px 5px 0;
   transition: 0.2s linear;
   opacity: 1;
 }
