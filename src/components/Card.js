@@ -16,13 +16,15 @@ class Card {
   _getTemplate() {
     const templateCard = document
       .querySelector(this._cardSelector)
-      .content.cloneNode(true);
+      .content.querySelector('.elements__card')
+      .cloneNode(true);
 
     return templateCard;
   }
   // Метод удаления карточки
   deleteCard() {
-    this._elementTrash.closest(".elements__card").remove();
+    this._element.remove();
+    this._element = null;
   }
   // Слушаем клики
   _setEventListeners() {
