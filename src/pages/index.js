@@ -14,16 +14,16 @@ let userId
 
 api.getProfile()
 .then((res) => {
-  userInfo.setUserInfo(res.name, res.about);
+  userInfo.setUserInfo(res.name, res.about, res.avatar);
   userId = res._id
-});
-
+})
+.catch(err => alert(err))
 // > > > > >
 
 // Массив карточек с сервера < < < < <
 api.getInitialCards()
 .then((cardList) => {
-  cardList.forEach((data) => {
+  cardList.reverse().forEach((data) => {
     const card = createCard({
       name: data.name,
       link: data.link,
@@ -33,9 +33,10 @@ api.getInitialCards()
       ownerId: data.owner._id
     });
     addCard.addItem(card);
-  });
-});
-
+  })
+})
+.catch(err => alert(err))
+// > > > > >
 // Создание карточки < < < < <
 const createCard = (data) => {
   const card = new Card(
@@ -53,6 +54,7 @@ const createCard = (data) => {
            card.deleteCard()
            confirmPopup.close()
          })
+         .catch(err => alert(err))
          .finally( () => editProfilePopup.renderLoading(false))
       })
     },
@@ -63,11 +65,13 @@ const createCard = (data) => {
         .then(res => {
           card.setLikes(res.likes)
         })
+        .catch(err => alert(err))
       } else {
         api.addlike(id)
         .then(res => {
           card.setLikes(res.likes)
         })
+        .catch(err => alert(err))
       }
     }
   );
@@ -101,9 +105,7 @@ const editProfilePopup = new PopupWithForm(
         // Закроем попап после ответа сервера.
         editProfilePopup.close();
       })
-      .catch( () => {
-        editProfilePopup.close()
-      })
+      .catch(err => alert(err))
       .finally( () => editProfilePopup.renderLoading(false))
   })
 editProfilePopup.setEventListeners();
@@ -146,9 +148,7 @@ const addCardPopup = new PopupWithForm(
       addCard.addItem(card);
       addCardPopup.close();
     })
-    .catch( () => {
-      addCardPopup.close()
-    })
+    .catch(err => alert(err))
     .finally( () => addCardPopup.renderLoading(false))
   })
 addCardPopup.setEventListeners();
@@ -173,12 +173,10 @@ const avatarPopup = new PopupWithForm(
     avatarPopup.renderLoading(true)
     api.updateAvatar(input.avatar)
     .then(res => {
-      userInfo.setUserAvatar(res.avatar)
+      userInfo.setUserInfo(res.name, res.about, res.avatar)
       avatarPopup.close()
     })
-    .catch( () => {
-      avatarPopup.close()
-    })
+    .catch(err => alert(err))
     .finally( () => avatarPopup.renderLoading(false))
   })
 avatarPopup.setEventListeners()

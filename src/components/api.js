@@ -8,7 +8,6 @@ class Api {
       return res.json()
     } else {
       return Promise.reject(`Ошибка ${res.status}`)
-      .catch(err => alert(err))
     }
   }
   // Получить данные ПРОФИЛЬ
