@@ -56,55 +56,55 @@
     </div>
   </div>
 <!-- POPUP ADD CARD -->
-<div class="popup popup_style_add-photo">
-  <div class="popup__container">
-    <h2 class="popup__title">Новое место</h2>
-    <button class="popup__close popup__close_type_photo" type="button" aria-label="Закрыть окно"></button>
-    <form class="popup__form popup__form_type_photo" id="addcard-form" name="addcard-form" autocomplete="on" method="get" novalidate>
-      <div class="popup__input-container">
-        <input id="title-photo-input" class="popup__input_data_title-photo popup__input" name="name" type="text" required autofocus minlength="2" maxlength="30" placeholder="Название">
-        <span class="title-photo-input-error popup__input-error"></span>
-      </div>
-      <div class="popup__input-container">
-        <input id="link-input" class="popup__input_data_link-to-pic popup__input" name="link" type="url" required placeholder="Ссылка на картинку">
-        <span class="link-input-error popup__input-error"></span>
-      </div>
-      <button class="popup__submit" type="submit" aria-label="Создать">Создать</button>
-    </form>
+  <div class="popup popup_style_add-photo">
+    <div class="popup__container">
+      <h2 class="popup__title">Новое место</h2>
+      <button class="popup__close popup__close_type_photo" type="button" aria-label="Закрыть окно"></button>
+      <form class="popup__form popup__form_type_photo" id="addcard-form" name="addcard-form" autocomplete="on" method="get" novalidate>
+        <div class="popup__input-container">
+          <input id="title-photo-input" class="popup__input_data_title-photo popup__input" name="name" type="text" required autofocus minlength="2" maxlength="30" placeholder="Название">
+          <span class="title-photo-input-error popup__input-error"></span>
+        </div>
+        <div class="popup__input-container">
+          <input id="link-input" class="popup__input_data_link-to-pic popup__input" name="link" type="url" required placeholder="Ссылка на картинку">
+          <span class="link-input-error popup__input-error"></span>
+        </div>
+        <button class="popup__submit" type="submit" aria-label="Создать">Создать</button>
+      </form>
+    </div>
   </div>
-</div>
 <!-- POPUP FULSCREEN -->
-<div class="popup popup_style_fullscreen-img">
-  <div class="popup__fullscreen-container">
-    <button class="popup__close popup__close_type_fullscreen" type="button" aria-label="Закрыть окно"></button>
-    <img class="popup__fullscreen-img" src="#" alt="#">
-    <h2 class="popup__fullscreen-title">Title</h2>
+  <div class="popup popup_style_fullscreen-img">
+    <div class="popup__fullscreen-container">
+      <button class="popup__close popup__close_type_fullscreen" type="button" aria-label="Закрыть окно"></button>
+      <img class="popup__fullscreen-img" src="#" alt="#">
+      <h2 class="popup__fullscreen-title">Title</h2>
+    </div>
   </div>
-</div>
-<!-- POPUP ARE YOU SURE -->
-<div class="popup popup_style_delete">
-  <div class="popup__container">
-    <h2 class="popup__title popup__title_style_delete">Вы уверены?</h2>
-    <button class="popup__close popup__close_type_photo" type="button" aria-label="Закрыть окно"></button>
-    <form class="popup__form" name="delete-card" method="get">
-      <button class="popup__submit popup__submit_style_delete" type="submit">Да</button>
-    </form>
+  <!-- POPUP ARE YOU SURE -->
+  <div class="popup popup_style_delete">
+    <div class="popup__container">
+      <h2 class="popup__title popup__title_style_delete">Вы уверены?</h2>
+      <button class="popup__close popup__close_type_photo" type="button" aria-label="Закрыть окно"></button>
+      <form class="popup__form" name="delete-card" method="get">
+        <button class="popup__submit popup__submit_style_delete" type="submit">Да</button>
+      </form>
+    </div>
   </div>
-</div>
-<!-- POPUP AVATAR -->
-<div class="popup popup_style_avatar">
-  <div class="popup__container">
-    <h2 class="popup__title">Обновить aватар</h2>
-    <button class="popup__close popup__close_type_photo" type="button" aria-label="Закрыть окно"></button>
-    <form class="popup__form popup__form_type_photo" name="avatar-form" autocomplete="on" method="get" novalidate>
-      <div class="popup__input-container">
-        <input id="avatar-input" class="popup__input_data_avatar popup__input" name="avatar" type="url" required placeholder="Ссылка на картинку">
-        <span class="avatar-input-error popup__input-error"></span>
-      </div>
-      <button class="popup__submit" type="submit" aria-label="Сохранить">Сохранить</button>
-    </form>
+  <!-- POPUP AVATAR -->
+  <div class="popup popup_style_avatar">
+    <div class="popup__container">
+      <h2 class="popup__title">Обновить aватар</h2>
+      <button class="popup__close popup__close_type_photo" type="button" aria-label="Закрыть окно"></button>
+      <form class="popup__form popup__form_type_photo" name="avatar-form" autocomplete="on" method="get" novalidate>
+        <div class="popup__input-container">
+          <input id="avatar-input" class="popup__input_data_avatar popup__input" name="avatar" type="url" required placeholder="Ссылка на картинку">
+          <span class="avatar-input-error popup__input-error"></span>
+        </div>
+        <button class="popup__submit" type="submit" aria-label="Сохранить">Сохранить</button>
+      </form>
+    </div>
   </div>
-</div>
 <!-- TEMPLATE CARD -->
   <template id="template__card">
     <li class="elements__card">
